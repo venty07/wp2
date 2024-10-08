@@ -1,14 +1,33 @@
-<?php 
+<?php
 
-use app\httpcontrollers;
+namespace app\http\controllers;
 
-use uminate\http\request;
+use Illuminate \http\Request;
 
-class hellowordcontroller extends controller
+class hellowordcontrollers extend controllers
+{
+    //
+}
+<?php
+namespace app\http\contollers;
+use Illuminate\http\request;
+
+class hellowordcontrollers extends controller
 {
     public function index()
     {
-        return "selamat belajar laravel";
+        return "selamat belajar framework laravel 10";
     }
 }
+
+<?php
+use Illuminate\facades\route;
+use app\http\controllers\hellowordcontroller;
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+route::get('helloword', [hellowordcontroller:: class, 'indesx']),
+   
 
